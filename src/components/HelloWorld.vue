@@ -17,11 +17,8 @@
         <v-flex class="md4">
           <InstalacaoDispositivo :dados="instalacoes"/>
         </v-flex>
-        <v-flex class="md6">
+        <v-flex class="md12">
           <Pedidos7Dias :dados="pedidos7"/>
-        </v-flex>
-        <v-flex class="md6">
-          <UsuariosHora :dados="usuariosHora"/>
         </v-flex>
         <v-flex class="md12">
           <UsuariosDia :dados="usuariosDia"/>
@@ -35,25 +32,60 @@
 import Threads from '../components/Monitoramento/monitorThreads'
 import Indicador from '../components/Indicadores/Indicador'
 import Pedidos7Dias from '../components/Charts/Pedido7Dias'
-import UsuariosHora from '../components/Charts/UsuarioPorHora'
 import UsuariosDia from '../components/Charts/UsuariosPorDia'
 import CuponsPedido from '../components/Charts/CuponsPedido'
 import PesquisaSatisfacao from '../components/Charts/PesquisaSatisfacao'
 import InstalacaoDispositivo from '../components/Charts/InstalacaoDispositivo'
   export default {
-    components: {Threads, Indicador, CuponsPedido, InstalacaoDispositivo, PesquisaSatisfacao, Pedidos7Dias, UsuariosHora, UsuariosDia},
+    components: {Threads, Indicador, CuponsPedido, InstalacaoDispositivo, PesquisaSatisfacao, Pedidos7Dias, UsuariosDia},
     created() {
     },
     methods: {      
     },
     data() {
       return {
-        cupons: [],
-        avaliacoes: [],
-        instalacoes: [],
-        pedidos7: [],
-        usuariosHora: [],
-        usuariosDia: []
+        cupons: [
+          ['Label', 'Valor'],
+          ['Cupom1', 20],
+          ['Cupom2', 40],
+          ['Cupom3', 90],
+          ['Cupom4', 10],
+        ],
+        avaliacoes: [
+          ['Label', 'Valor'],
+          ['Ótimo', 50],
+          ['Regular', 20],
+          ['Ruim', 10]
+        ],
+        instalacoes: [
+          ['Label', 'Valor'],
+          ['Android', 50],
+          ['iOS', 25]
+        ],
+        pedidos7: [
+          ['Dias', 'Pedidos'],
+          ['Out 22', 6],
+          ["Out 23", 10],
+          ["Out 24", 3],
+          ["Out 25", 3],
+          ["Out 26", 5],
+          ["Out 28", 6],
+          ["Out 29", 1],
+        ],
+        usuariosDia: [
+          ['Dias', 'Usuarios'],
+          ["Out 18", 95],
+          ["Out 19", 93],
+          ["Out 20", 20],
+          ["Out 21", 92],
+          ["Out 22", 35],
+          ["Out 23", 44],
+          ["Out 24", 21],
+          ["Out 25", 26],
+          ["Out 26", 109],
+          ["Out 27", 23],
+          ["Out 28", 56],
+        ]
       }
     }
   }
